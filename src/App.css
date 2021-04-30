@@ -16,14 +16,15 @@ body {
 .todo-app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  width: 520px;
-  min-height: 600px;
+  justify-content: flex-start;
+  width: 620px;
+  min-height: 500px;
   background: #161a2b;
   text-align: center;
-  margin: 128px auto;
+  margin: 120px auto;
   border-radius: 10px;
   padding-bottom: 32px;
+  align-items: center;
 }
 
 h1 {
@@ -144,4 +145,26 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-app {
+    width: 350px;
+    min-height: 450px;
+    background: #161a2b;
+    text-align: center;
+
+    border-radius: 10px;
+    align-items: center;
+  }
+
+  .todo-input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #5d0cff;
+    outline: none;
+    width: 200px;
+    background: transparent;
+    color: #fff;
+  }
 }
