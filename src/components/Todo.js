@@ -4,11 +4,23 @@ import TodoList from './TodoList'
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
 
-function Todo({Todos, completeTodo, removeTodo}) {
+function Todo({Todos, completeTodo, removeTodo, updateTodo}) {
     const [Edit, setEdit] = useState({
         id: null,
         value: ''
-    })
+    });
+
+    const submitUpdate = value => {
+        updateTodo(Edit.id, value)
+        setEdit({
+            id: null,
+            value: ''
+        })
+    }
+
+    if (Edit.id) {
+        return <TodoForm edit={Edit} onSubmit={submitUpdate} />;
+    }
 
     return Todos.map((todo, index) => (
         <>
